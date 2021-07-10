@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript "Sąlygos sakiniai"</title>
+
+    <style>
+        input { 
+    text-align: center; 
+}
+       
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Kuris skaicius didesnis</h1>
+        <input type="text" name="skA" id="skA" placeholder="0">
+        <input type="text" name="rezultatas" id="rezultatas" disabled = "true">
+        <input type="text" name="skB" id="skB" placeholder="0">
+        <button class="action">Action</button>
+      
+    </div>
+
+    <div>
+        <h1>Kas didesnis tas gudresnis</h1>
+        <input type="text" name="skA1" id="skA1" placeholder="0">
+        <input type="text" name="skB1" id="skB1" placeholder="0">
+        <input type="text" name="skC1" id="skC1" placeholder="0">
+        <input type="text" name="dydis" id="dydis" disabled = "true">
+        <button class="laimetojas">Laimetojas</button>
+      
+    </div>
+    <script>
+        "use-strict";
+
+// 1. Suprogramuokite skriptą, kuris rastų didžiausią skaičių iš dviejų aprašytų.
+
+    // Papildomai:
+    // *Abu skaičiai yra paimami iš dviejų skirtingų input laukelių.
+    //  *Rezultatas išvedamas neaktyviame(disabled) input laukelyje.
+
+    document.querySelector(".action").addEventListener("click", function() {
+    var a, b, atsakymas;
+    a = parseFloat(document.querySelector("#skA").value);
+    b = parseFloat(document.querySelector("#skB").value);
+    atsakymas = document.querySelector("#rezultatas");
+
+
+    if (a > b) {
+        atsakymas = " > " ;
+    } else if (a < b) {
+        atsakymas = " < " ;
+    } else if ( a == b) { 
+        atsakymas = "Skaiciai yra lygus";
+    } else {
+        atsakymas = "Naudokite skaicius ";
+    }
+
+    rezultatas.value = atsakymas;
+
+});
+
+// 2. Suprogramuokite skriptą, kuris rastų didžiausią skaičių iš trijų aprašytų.
+
+    //  Papildomai:
+    //  *Visi skaičiai yra paimami iš skirtingų input laukelių.
+    //  *Rezultatas išvedamas neaktyviame(disabled) input laukelyje.
+
+    document.querySelector(".laimetojas").addEventListener("click", function() {
+    var a, b, c, didziausias;
+    a = parseFloat(document.querySelector("#skA1").value);
+    b = parseFloat(document.querySelector("#skB1").value);
+    c = parseFloat(document.querySelector("#skC1").value);
+    didziausias = document.querySelector("#dydis");
+
+
+    if ((a > b) && (a > c)) {
+        didziausias = a ;
+    } else if ((b > a) && (b > c)) {
+        didziausias = b ;
+    } else if ((c > b) && (c > a)) { 
+        didziausias = c;
+    } else {
+        didziausias = "Naudok skirtingus skaicius";
+    }
+
+    dydis.value = didziausias;
+
+});
+        
+// 3. Patikrinkite, ar iš trijų įvestų trikampio kraštinių galima sudaryti trikampį.
+
+
+
+
+    </script>
+    
+</body>
+</html>
